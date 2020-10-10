@@ -4,13 +4,18 @@ body {
     text-align: center;
 }
 
+footer {
+    text-align: center;
+    padding: 3px;
+    background-color: darkkhaki;    
+  }
+
 h1 {
     text-align: center;
 }
 
 .content {
     margin: auto;
-    border-style: dashed;
     background-color: darkkhaki;
 }
 

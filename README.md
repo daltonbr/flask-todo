@@ -2,16 +2,18 @@
 
 Experimenting with Flask and Python.
 
-* `virtualenv env` // Create a virtual environment
-* activate virtualenv `source env/bin/activate`
-* `pip3 freeze -> requirements.txt` // note that this file is empty (you must run it from the virtual env)
-  * Other devs in their virtual environment can do `pip install -r requirements.txt`
+* `virtualenv env` Create a virtual environment
+* `source env/bin/activate` Activate virtualenv 
 * `pip3 install flask flask-sqlalchemy`
-* `pip3 freeze -> requirements.txt` // now we see the dependencies.
 
+* `pip3 install gunicorn` a Python WSGI HTTP Server
+* `pip3 freeze -> requirements.txt` at the end, just re-export the dependencies.
+  * `pip install -r requirements.txt` to reinstall requirements
+
+* 
 ## Database
 
-Configuring a SQLite for simplicity sake
+USing SQLite for simplicity sake
 
 ```python
 from flask_sqlalchemy import SQLAlchemy
@@ -40,16 +42,27 @@ class Todo(db.Model):
 
 Creating a SQLite DB
 
-On the Python REPL, with the virtual environment set
+* Run this script (ad-hoc) `create_db.py`
 
-```python
-from app import db
-db.create_all()
-exit()
-```
+## Glossary
+
+* [Flask](https://palletsprojects.com/p/flask/)  a lightweight WSGI web application framework.
+  * Flask depends on the [Jinja](https://www.palletsprojects.com/p/jinja/) template engine and the [Werkzeug](https://www.palletsprojects.com/p/werkzeug/) WSGI toolkit.
+
+* [WSGI](https://en.wikipedia.org/wiki/Web_Server_Gateway_Interface)
+* [Green Unicorn - gunicorn](https://gunicorn.org/) a Python WSGI HTTP Server for UNIX
+
+## Uploading the app to Heroku
+
+* Install [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli)
+  * on WSL `$ curl https://cli-assets.heroku.com/install.sh | sh`
+
+* with the git repository at least initialized and heroku logged in
+* `$ heroku create <my-app-name>`
+* `$ git remote -v` check remotes
+* `$git push heroku <branch_to_push>`
 
 
 ## Credits
 
-Based on 
-[Learn Flask for Python](https://www.youtube.com/watch?v=Z1RJmh_OqeA&t=386s)
+Based on [Learn Flask for Python](https://www.youtube.com/watch?v=Z1RJmh_OqeA&t=386s)
