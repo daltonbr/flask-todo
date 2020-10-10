@@ -1,6 +1,11 @@
 body {
     margin: auto;
     font-family: sans-serif;    
+    text-align: center;
+}
+
+h1 {
+    text-align: center;
 }
 
 .content {
@@ -14,7 +19,17 @@ table {
 }
 
 td, th {
+    text-align: center;
+    padding: 5px;
     border-top-width: 1px;
     border-top-style: solid;
     border-top-color: #000;
+}
+
+.form {
+    margin-top: 20px;
+}
+
+#content {
+    width: 70%;
 }
