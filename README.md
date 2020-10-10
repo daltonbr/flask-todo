@@ -56,12 +56,11 @@ Creating a SQLite DB
 
 * Install [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli)
   * on WSL `$ curl https://cli-assets.heroku.com/install.sh | sh`
-
+* Create `Procfile` into the app root folder with the content `web: gunicorn app:app`
 * with the git repository at least initialized and heroku logged in
 * `$ heroku create <my-app-name>`
 * `$ git remote -v` check remotes
 * `$git push heroku <branch_to_push>`
-
 
 ## Credits
 
